@@ -26,4 +26,4 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run test:dist
-      - run: npx attw --pack . --profile esm-only
+      - run: npx attw --pack . --profile esm-only --exclude-entrypoints ./spec.md

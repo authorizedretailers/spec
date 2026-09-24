@@ -26,7 +26,7 @@
     "test": "vitest run",
     "test:dist": "npm run build && node test/dist-smoke.mjs",
     "typecheck": "tsc -p .",
-    "check:package": "npm run build && attw --pack . --profile esm-only",
+    "check:package": "npm run build && attw --pack . --profile esm-only --exclude-entrypoints ./spec.md",
     "prepublishOnly": "npm run typecheck && npm test && npm run test:dist"
   },
   "dependencies": {
