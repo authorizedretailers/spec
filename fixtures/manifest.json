@@ -1,0 +1,427 @@
+[
+  {
+    "path": "file/valid/full-signed.json",
+    "kind": "file",
+    "valid": true,
+    "note": "Section 5 example"
+  },
+  {
+    "path": "file/valid/full-unsigned-handwritten.json",
+    "kind": "file",
+    "valid": true,
+    "note": "Section 5: hand-written unsigned files are accepted"
+  },
+  {
+    "path": "file/valid/full-no-authorizations.json",
+    "kind": "file",
+    "valid": true,
+    "note": "A brand with nothing authorized"
+  },
+  {
+    "path": "file/valid/full-worldwide-physical-proposed.json",
+    "kind": "file",
+    "valid": true,
+    "note": "Worldwide scope, named product lines, eBay + physical, distributor-proposed"
+  },
+  {
+    "path": "file/valid/full-max-expiry.json",
+    "kind": "file",
+    "valid": true,
+    "note": "Exactly 180 days after issued (section 10)"
+  },
+  {
+    "path": "file/valid/full-fractional-seconds.json",
+    "kind": "file",
+    "valid": true,
+    "note": "Fractional seconds are allowed"
+  },
+  {
+    "path": "file/valid/pointer.json",
+    "kind": "file",
+    "valid": true,
+    "note": "Section 5 pointer form"
+  },
+  {
+    "path": "file/valid/private.json",
+    "kind": "file",
+    "valid": true,
+    "note": "Section 5 private form"
+  },
+  {
+    "path": "file/invalid/full-no-channels.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 6: at least one channel identifier"
+  },
+  {
+    "path": "file/invalid/full-name-only-retailer.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 6: a name alone is not verifiable"
+  },
+  {
+    "path": "file/invalid/full-missing-scope.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 3: every authorization MUST carry a scope"
+  },
+  {
+    "path": "file/invalid/full-missing-territories.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 3: scope needs territories"
+  },
+  {
+    "path": "file/invalid/full-missing-product-lines.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 3: scope needs product lines"
+  },
+  {
+    "path": "file/invalid/full-missing-authorization-expires.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 3: scope needs an expiry"
+  },
+  {
+    "path": "file/invalid/full-empty-territories.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Territories cannot be empty"
+  },
+  {
+    "path": "file/invalid/full-wildcard-mixed.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "'*' must stand alone"
+  },
+  {
+    "path": "file/invalid/full-lowercase-territory.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Country codes are uppercase alpha-2"
+  },
+  {
+    "path": "file/invalid/full-all-mixed.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "'all' must stand alone"
+  },
+  {
+    "path": "file/invalid/full-unknown-channel-type.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 6: unlisted channel type"
+  },
+  {
+    "path": "file/invalid/full-amazon-missing-seller-id.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 6: amazon needs seller_id"
+  },
+  {
+    "path": "file/invalid/full-web-missing-domain.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 6: web needs domain"
+  },
+  {
+    "path": "file/invalid/full-web-domain-is-url.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Domains are bare hostnames"
+  },
+  {
+    "path": "file/invalid/full-physical-missing-country.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 6: physical needs country"
+  },
+  {
+    "path": "file/invalid/full-wrong-spec.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Unknown spec version"
+  },
+  {
+    "path": "file/invalid/full-missing-file-expires.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "File needs expires"
+  },
+  {
+    "path": "file/invalid/full-non-utc-timestamp.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Timestamps are UTC with Z"
+  },
+  {
+    "path": "file/invalid/full-extra-property.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 1: no pricing; unknown properties rejected"
+  },
+  {
+    "path": "file/invalid/full-attached-jws.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 8: JWS must be detached"
+  },
+  {
+    "path": "file/invalid/full-signature-missing-kid.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 8: every signature names its kid"
+  },
+  {
+    "path": "file/invalid/pointer-http-url.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Pointer must be HTTPS"
+  },
+  {
+    "path": "file/invalid/private-missing-verify.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Private form needs a verify endpoint"
+  },
+  {
+    "path": "file/invalid/private-with-authorizations.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 5: private form carries no retailers"
+  },
+  {
+    "path": "file/invalid/unknown-form.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Only full, pointer, private"
+  },
+  {
+    "path": "file/invalid/full-authorization-expires-after-file.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "authorization_expires_after_file",
+    "note": "Section 5 MUST"
+  },
+  {
+    "path": "file/invalid/full-expiry-over-180-days.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "file_expiry_exceeds_max",
+    "note": "Section 10: max 180 days"
+  },
+  {
+    "path": "file/invalid/full-expires-before-issued.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "expires_not_after_issued",
+    "note": "Expiry must follow issue"
+  },
+  {
+    "path": "file/invalid/full-duplicate-authorization-id.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "duplicate_authorization_id",
+    "note": "Authorization ids are unique within a file"
+  },
+  {
+    "path": "file/invalid/full-impossible-date.json",
+    "kind": "file",
+    "valid": false,
+    "expect": "schema",
+    "note": "Feb 30 does not exist (format date-time; parseTimestamp also rejects it)"
+  },
+  {
+    "path": "verify-request/valid/amazon.json",
+    "kind": "verify-request",
+    "valid": true,
+    "note": "Section 9 example"
+  },
+  {
+    "path": "verify-request/valid/web-no-product-line.json",
+    "kind": "verify-request",
+    "valid": true,
+    "note": "product_line defaults to all"
+  },
+  {
+    "path": "verify-request/invalid/physical-channel.json",
+    "kind": "verify-request",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 6: physical is not verifiable"
+  },
+  {
+    "path": "verify-request/invalid/wildcard-territory.json",
+    "kind": "verify-request",
+    "valid": false,
+    "expect": "schema",
+    "note": "A request names one territory"
+  },
+  {
+    "path": "verify-request/invalid/missing-channel.json",
+    "kind": "verify-request",
+    "valid": false,
+    "expect": "schema",
+    "note": "Channel is required"
+  },
+  {
+    "path": "verify-request/invalid/retailer-name-only.json",
+    "kind": "verify-request",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 6: agents match on identifiers, not names"
+  },
+  {
+    "path": "verify-request/invalid/domain-with-scheme.json",
+    "kind": "verify-request",
+    "valid": false,
+    "expect": "schema",
+    "note": "Bare hostname only"
+  },
+  {
+    "path": "verify-response/valid/authorized-observed.json",
+    "kind": "verify-response",
+    "valid": true,
+    "note": "Section 9 example plus valid_until"
+  },
+  {
+    "path": "verify-response/valid/authorized-self-published.json",
+    "kind": "verify-response",
+    "valid": true,
+    "note": "Hand-written file, unregistered brand"
+  },
+  {
+    "path": "verify-response/valid/expired.json",
+    "kind": "verify-response",
+    "valid": true
+  },
+  {
+    "path": "verify-response/valid/disputed.json",
+    "kind": "verify-response",
+    "valid": true
+  },
+  {
+    "path": "verify-response/valid/unlisted.json",
+    "kind": "verify-response",
+    "valid": true
+  },
+  {
+    "path": "verify-response/valid/brand-unverified-reason.json",
+    "kind": "verify-response",
+    "valid": true,
+    "note": "Section 9 reason"
+  },
+  {
+    "path": "verify-response/valid/brand-unverified-no-reason.json",
+    "kind": "verify-response",
+    "valid": true,
+    "note": "reason is optional"
+  },
+  {
+    "path": "verify-response/valid/with-signal.json",
+    "kind": "verify-response",
+    "valid": true,
+    "note": "Section 7 signals"
+  },
+  {
+    "path": "verify-response/invalid/missing-tier.json",
+    "kind": "verify-response",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 7: every answer MUST state its tier"
+  },
+  {
+    "path": "verify-response/invalid/authorized-null-tier.json",
+    "kind": "verify-response",
+    "valid": false,
+    "expect": "schema",
+    "note": "Only brand_unverified has a null tier"
+  },
+  {
+    "path": "verify-response/invalid/brand-unverified-with-tier.json",
+    "kind": "verify-response",
+    "valid": false,
+    "expect": "schema",
+    "note": "brand_unverified has tier null"
+  },
+  {
+    "path": "verify-response/invalid/unlisted-with-reason.json",
+    "kind": "verify-response",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 9: reason only on brand_unverified"
+  },
+  {
+    "path": "verify-response/invalid/unlisted-with-authorization-id.json",
+    "kind": "verify-response",
+    "valid": false,
+    "expect": "schema",
+    "note": "Unlisted answers leak nothing about other authorizations"
+  },
+  {
+    "path": "verify-response/invalid/authorized-missing-authorization-id.json",
+    "kind": "verify-response",
+    "valid": false,
+    "expect": "schema"
+  },
+  {
+    "path": "verify-response/invalid/missing-valid-until.json",
+    "kind": "verify-response",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 9: valid_until is required"
+  },
+  {
+    "path": "verify-response/invalid/missing-signature.json",
+    "kind": "verify-response",
+    "valid": false,
+    "expect": "schema",
+    "note": "Answers are signed"
+  },
+  {
+    "path": "verify-response/invalid/unknown-status.json",
+    "kind": "verify-response",
+    "valid": false,
+    "expect": "schema",
+    "note": "Section 1: unlisted is not unlawful"
+  },
+  {
+    "path": "verify-response/invalid/valid-until-over-24h.json",
+    "kind": "verify-response",
+    "valid": false,
+    "expect": "valid_until_exceeds_max",
+    "note": "Section 9 MUST"
+  },
+  {
+    "path": "verify-response/invalid/valid-until-before-checked.json",
+    "kind": "verify-response",
+    "valid": false,
+    "expect": "valid_until_not_after_checked"
+  }
+]

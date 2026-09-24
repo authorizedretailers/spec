@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://authorizedretailers.ai/schemas/0.1/verify-request.json",
+  "title": "POST /v0/verify request (section 9)",
+  "description": "Canonical form. Registries normalize case and whitespace before validating (see normalizeVerifyRequest).",
+  "type": "object",
+  "required": ["brand_domain", "channel", "territory"],
+  "additionalProperties": false,
+  "properties": {
+    "brand_domain": { "$ref": "common.json#/$defs/domain" },
+    "channel": { "$ref": "common.json#/$defs/verifiableChannel" },
+    "territory": { "$ref": "common.json#/$defs/countryCode" },
+    "product_line": {
+      "description": "Defaults to \"all\" when omitted.",
+      "$ref": "common.json#/$defs/productLine"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://authorizedretailers.ai/schemas/0.1/file-full.json",
+  "title": "authorized-retailers.json, full form",
+  "type": "object",
+  "required": ["spec", "form", "brand", "issued", "expires", "authorizations"],
+  "additionalProperties": false,
+  "properties": {
+    "spec": { "$ref": "common.json#/$defs/specVersion" },
+    "form": { "const": "full" },
+    "brand": { "$ref": "common.json#/$defs/brand" },
+    "issued": { "$ref": "common.json#/$defs/timestamp" },
+    "expires": { "$ref": "common.json#/$defs/timestamp" },
+    "authorizations": {
+      "type": "array",
+      "items": { "$ref": "common.json#/$defs/authorization" }
+    },
+    "signature": {
+      "description": "Optional: hand-written files may be unsigned and are then self_published (section 5).",
+      "$ref": "common.json#/$defs/signature"
+    }
+  }
+}

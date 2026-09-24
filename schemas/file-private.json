@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://authorizedretailers.ai/schemas/0.1/file-private.json",
+  "title": "authorized-retailers.json, private form",
+  "type": "object",
+  "required": ["spec", "form", "brand", "verify"],
+  "additionalProperties": false,
+  "properties": {
+    "spec": { "$ref": "common.json#/$defs/specVersion" },
+    "form": { "const": "private" },
+    "brand": { "$ref": "common.json#/$defs/brand" },
+    "verify": { "$ref": "common.json#/$defs/httpsUrl" }
+  }
+}

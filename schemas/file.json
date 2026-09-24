@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://authorizedretailers.ai/schemas/0.1/file.json",
+  "title": "authorized-retailers.json, any form",
+  "type": "object",
+  "required": ["form"],
+  "properties": { "form": { "enum": ["full", "pointer", "private"] } },
+  "allOf": [
+    { "if": { "properties": { "form": { "const": "full" } } }, "then": { "$ref": "file-full.json" } },
+    { "if": { "properties": { "form": { "const": "pointer" } } }, "then": { "$ref": "file-pointer.json" } },
+    { "if": { "properties": { "form": { "const": "private" } } }, "then": { "$ref": "file-private.json" } }
+  ]
+}

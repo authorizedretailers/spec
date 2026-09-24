@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://authorizedretailers.ai/schemas/0.1/file-pointer.json",
+  "title": "authorized-retailers.json, pointer form",
+  "type": "object",
+  "required": ["spec", "form", "brand", "list"],
+  "additionalProperties": false,
+  "properties": {
+    "spec": { "$ref": "common.json#/$defs/specVersion" },
+    "form": { "const": "pointer" },
+    "brand": { "$ref": "common.json#/$defs/brand" },
+    "list": { "$ref": "common.json#/$defs/httpsUrl" }
+  }
+}

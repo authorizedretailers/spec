@@ -1,0 +1,8 @@
+{
+  "spec": "authorized-retailers/0.1",
+  "form": "private",
+  "brand": {
+    "name": "Example Brand",
+    "domain": "examplebrand.com"
+  }
+}
